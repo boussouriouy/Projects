@@ -1,0 +1,25 @@
+{% extends 'heater.html' %}
+{% block content %}
+
+<h2>This is the item details</h2>
+{{ object.id }} - {{object.title }}
+
+<div>
+    {% if object.price > 20 %}
+       <h5>this amount: ${{ object.price }} is not a good deal for us Dude!</h5>
+
+    {% else  %}
+       <h5>Yep Good deal Dude !</h5>
+    {% endif %}
+</div>
+
+<P>{{ object.description }}</P>
+
+<form action="." method="POST">{% csrf_token %}
+
+    <h3>Do you want to delete the <i>{{object1.title }}</i> item?</h3>
+    <input type="submit" value="Yes"> <a href="/product/list">No</a>
+
+</form>
+
+{% endblock %}

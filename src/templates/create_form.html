@@ -1,0 +1,13 @@
+{% extends 'heater.html' %}
+
+{% block content %}
+<table border="2" >
+    <thead>
+        <form action="." method="post">{% csrf_token %}
+            {{ form.as_p }}
+             <input type="submit" value="save">
+        </form>
+    </thead>
+</table>
+{{ my_txt|safe }}
+{% endblock %}

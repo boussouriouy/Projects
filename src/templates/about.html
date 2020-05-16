@@ -1,0 +1,22 @@
+{% extends 'heater.html' %}
+
+{% block content %}
+<h1>About Pages</h1>
+
+{{ my_html|safe }}
+
+{{ my_txt }}, {{ my_num }}
+
+<p>{{ my_list|random }}</p>
+
+<ul>
+    {% for abc in my_list %}
+        {% if abc == 'MBD' %}
+            <li>Bingo!</li>
+        {% else %}
+            <li>{{forloop.counter}}-{{ abc }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{% endblock %}
